@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 30,
+            "database": "solartissysconfigdbV3",
+            "dialect": "MySQL",
+            "name": "UCI-SysConfig",
+            "password": "devuciuser*11",
+            "port": 3401,
+            "server": "10.101.4.13",
+            "username": "devuciuser"
+        }
+    ]
+}
