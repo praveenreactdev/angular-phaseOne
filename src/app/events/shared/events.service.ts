@@ -14,6 +14,11 @@ export class EventsService{
     getEvent(id:number):IEvent{
       return EVENTS.find(event=>event.id === id)
     }
+    saveEvent(event:IEvent){
+      event.id=99
+      event.sessions = []
+      EVENTS.push(event)
+    }
 }
 const EVENTS:IEvent[] = [
     {
@@ -288,6 +293,94 @@ const EVENTS:IEvent[] = [
     {
       id: 5,
       name: 'ng-vegas',
+      date: new Date('2/10/2037'),
+      time: '9:00 am',
+      price: 400.00,
+      imageUrl: '/assets/images/ng-vegas.png',
+      location: {
+        address: 'The Excalibur',
+        city: 'Las Vegas',
+        country: 'USA'
+      },
+      sessions: [
+        {
+          id: 1,
+          name: "Gambling with Angular",
+          presenter: "John Papa",
+          duration: 1,
+          level: "Intermediate",
+          abstract: `No, this talk isn't about slot machines. We all know that 
+          Angular is used in most waiter-bots and coke vending machines, but
+          did you know that was also used to write the core engine in the majority
+          of voting machines? This talk will look at how all presidential elections
+          are now determined by Angular code.`,
+          voters: ['bradgreen', 'igorminar']
+        },
+        {
+          id: 2,
+          name: "Angular 4 in 60ish Minutes",
+          presenter: "Dan Wahlin",
+          duration: 2,
+          level: "Beginner",
+          abstract: `Get the skinny on Angular 4 for anyone new to this great new technology.
+          Dan Wahlin will show you how you can get started with Angular in 60ish minutes, 
+          guaranteed!`,
+          voters: ['bradgreen', 'igorminar', 'johnpapa']
+        }
+      ]
+    },
+    {
+      id: 4,
+      name: 'UN Angular Summit',
+      date: new Date('6/10/2037'),
+      time: '8:00 am',
+      price: 800.00,
+      imageUrl: '/assets/images/basic-shield.png',
+      location: {
+        address: 'The UN Angular Center',
+        city: 'New York',
+        country: 'USA'
+      },
+      sessions: [
+        {
+          id: 1,
+          name: "Diversity in Tech",
+          presenter: "Sir Dave Smith",
+          duration: 2,
+          level: "Beginner",
+          abstract: `Yes, we all work with cyborgs and androids and Martians, but 
+          we probably don't realize that sometimes our internal biases can make it difficult for
+          these well-designed coworkers to really feel at home coding alongside us. This talk will
+          look at things we can do to recognize our biases and counteract them.`,
+          voters: ['bradgreen', 'igorminar']
+        },
+        {
+          id: 2,
+          name: "World Peace and Angular",
+          presenter: "US Secretary of State Zach Galifianakis",
+          duration: 2,
+          level: "Beginner",
+          abstract: `Angular has been used in most of the major peace brokering that has
+          happened in the last decade, but there is still much we can do to remove all
+          war from the world, and Angular will be a key part of that effort.`,
+          voters: ['bradgreen', 'igorminar', 'johnpapa']
+        },
+        {
+          id: 3,
+          name: "Using Angular with Androids",
+          presenter: "Dan Wahlin",
+          duration: 3,
+          level: "Advanced",
+          abstract: `Androids may do everything for us now, allowing us to spend all day playing 
+          the latest Destiny DLC, but we can still improve the massages they give and the handmade
+          brie they make using Angular 4. This session will show you how.`,
+          voters: ['igorminar', 'johnpapa']
+        },
+      ]
+    },
+    {
+      id: 6,
+      name: 'Albin',
       date: new Date('2/10/2037'),
       time: '9:00 am',
       price: 400.00,

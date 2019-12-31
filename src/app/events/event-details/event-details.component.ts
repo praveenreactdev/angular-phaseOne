@@ -13,6 +13,8 @@ import {IEvent} from '../shared/event.model'
 
 export class EventsDetails implements OnInit{
     event:IEvent
+    filterBy:string = 'all'
+    sortBy:string = 'name'
     constructor(private eventsService:EventsService,
         private route:ActivatedRoute
         ){}
