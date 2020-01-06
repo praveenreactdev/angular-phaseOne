@@ -18,6 +18,12 @@ import {CreateSessionComponent} from './events/event-details/create-session.comp
 import { SessionList } from './events/event-details/session-list.component';
 import { CollapsibleWell } from './common/collapsible-well.component';
 import { DurationPipe } from './events/shared/duration.pipe';
+import { JQ_TOKEN } from './common/jquery.service';
+import { SimpleModal } from './common/simple-modal.component';
+import { ModalTriggerDirective } from './common/modalTrigger.directive';
+import {HttpClientModule} from '@angular/common/http'
+let JQuery = window['$']
+
 
 @NgModule({
   declarations: [
@@ -31,13 +37,16 @@ import { DurationPipe } from './events/shared/duration.pipe';
     CreateSessionComponent,
     SessionList,
     CollapsibleWell,
-    DurationPipe
+    DurationPipe,
+    SimpleModal,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers:[EventsService,
     EventRouteActivator,
@@ -45,6 +54,10 @@ import { DurationPipe } from './events/shared/duration.pipe';
     {
       provide:'canDeactivateCreateEvent',
       useValue:checkDirtyState
+    },
+    {
+      provide: JQ_TOKEN,
+      useValue: JQuery
     },
     AuthService
   
